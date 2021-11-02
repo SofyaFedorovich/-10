@@ -4,49 +4,34 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Занятие_10
+namespace Буфер
 {
-    //класс угол
     class Program
     {
         static void Main(string[] args)
         {
-            Angle angle = new Angle();
-            Console.WriteLine("Задайте угол, градусы целым числом: ");
-            angle.Gradus = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine("Задайте угол, минуты целым числом: ");
-            angle.Min = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine("Задайте угол, секунды целым числом: ");
-            angle.Sec = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine();
-            angle.ToRadians();
-            Console.ReadKey();
-        }
-    }
-    class Angle
-    {
-        int gradus;
-        int min;
-        int sec;
+            Console.WriteLine(angle.gradus);
+            Console.WriteLine(angle.min);
+            Console.WriteLine(angle.sec);
 
-        void angle(int gradus, int min, int sec) //конструктор
+            Console.ReadKey();
+
+
+
+            public class Angle
         {
-            this.gradus = gradus;
-            this.min = min;
-            this.sec = sec;
+            public int gradus { get; set; } // значение угла в градусах
+            public int min { get; set; } //угловые минуты
+            public int sec { get; set; } // угловые секунды
         }
-        public void ToRadians() //метод для перевода угла в радианы
-        {
-            double radians = gradus * Math.PI / 180 + min * Math.PI / (180 * 60) + sec * Math.PI / (180 * 60 * 60);
-            Console.WriteLine("Значение угла {0} {1}' {2}'' - в радианах: {3}", gradus, min, sec, radians);
-        }
-        public int Gradus
+
+        public int gradus
         {
             set
             {
                 if (value >= 0 && value <= 360) //угол должен быть от 0 до 360 градусов
                 {
-                    this. gradus = value;
+                    int gradus = value;
                 }
                 else
                 {
@@ -58,14 +43,13 @@ namespace Занятие_10
                 return gradus;
             }
         }
-
-        public int Min
+        public int min
         {
             set
             {
                 if (value >= 0 && value <= 60) // значение минут от 0 до 60
                 {
-                    this. min = value;
+                    int min = value;
                 }
                 else
                 {
@@ -77,14 +61,13 @@ namespace Занятие_10
                 return min;
             }
         }
-
-        public int Sec
+        public int sec
         {
             set
             {
                 if (value >= 0 && value <= 60) //значение секунд от 0 до 60
                 {
-                    this. sec = value;
+                    int sec = value;
                 }
                 else
                 {
@@ -96,8 +79,16 @@ namespace Занятие_10
                 return sec;
             }
         }
+        static void ToRadians(int gradus, int min, int sec) //метод для перевода угла в радианы
+        {
+            Console.WriteLine("Перевод величины угла {0} из градусов в радианы {1} ",);
+        }
+
+    }
+    void ToRadians(int gradus, int min, int sec) //метод для перевода угла в радианы
+    {
+        Console.WriteLine("Перевод величины угла {0} из градусов в радианы {1} ",);
     }
 }
-    
-    
-
+    }int gradus, int min, int sec
+}
